@@ -12,10 +12,11 @@ $('form#form').submit((event) => {
 
   let userNameLetterCount = user.replaceWithDino();
   let promise = DinoService.getDino(userNameLetterCount);
+  console.log(promise);
+  promise.then((response) => { console.log(response);
+    let body = JSON.parse(response);
+
   
-  promise.then((response) => {
-    const body = JSON.parse(response);
-    console.log(body);
     $('#output-dino').html(`<p>${body[0]}<p><br>`);
   });
   // for (let i=0; i < body.length; i++) {

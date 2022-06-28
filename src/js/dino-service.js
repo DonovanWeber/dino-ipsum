@@ -4,11 +4,12 @@ export default class DinoService {
       let request = new XMLHttpRequest();
       const url = `https:dinoipsum.com/api/?format=json&paragraphs=1&words=${userNameLetterCount}`;
 
-      request.onload = () => {
+      request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);
         } else {
           reject(request.response);
+          console.error();
         }
       };
       request.open("GET", url, true);

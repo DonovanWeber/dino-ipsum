@@ -92,3 +92,5 @@ test 5 : class Name{
   }
 }
 OUTCOME: inputted jim for the user input and returned 3 different dinosaurs but in an array inside a array.
+
+## STOP USING THE => FOR ONLOAD IT DOESN'T WORK
