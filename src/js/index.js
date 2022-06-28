@@ -7,23 +7,23 @@ import DinoService from "./dino-service.js";
 $('form#form').submit((event) => {
   event.preventDefault();
   const userName = $('#user-input').val();
-  console.log(userName);
-  let user =  new Name(userName);
-  console.log(user);
-  let dino = user.replaceWithDino();
   
-  let promise = DinoService.getDino(dino);
+  let user =  new Name(userName);
+
+  let userNameLetterCount = user.replaceWithDino();
+  let promise = DinoService.getDino(userNameLetterCount);
   promise.then((response) => {
     const body = JSON.parse(response);
-    $('#output-dino').append(`<p>${body[0]}<p><br>`);
+    console.log(body);
+    $('#output-dino').html(`<p>"${body[0][0]}"<p><br>`);
   });
-//promise
 
 
 
 
 
-//output
+
+
 
 
 });

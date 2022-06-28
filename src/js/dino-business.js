@@ -12,8 +12,6 @@ export default class Name{
   replaceWithDino()  {
     const userArray = [];
     let userName = this.userName;
-    // userName.toString();
-    console.log(userName);
     const array = userName.split("");
     for(let i=0; i < array.length; i++) {
       userArray.push(i);
